@@ -1,5 +1,107 @@
-document.getElementById("questionText").innerHTML =
-  "Your question will appear here.";
+var QuestionMsg = ''
+document.getElementById("questionText").innerHTML = QuestionMsg;
+
+function questionTextChange(msg){
+  document.getElementById("questionText").innerHTML = msg;
+  QuestionMsg = msg;
+  formSubmit('no');
+  function formSubmit(value) {
+    console.log(value);
+    if (value === "yes") {
+      var toUpload = document.getElementById("upload");
+      // toUpload.submit();
+      var fdata = new FormData(document.getElementById("upload"));
+      var fd;
+      for (var pair of fdata.entries()) {
+        fd = pair[1];
+      }
+      container.innerHTML = `
+    <div class="adminSide">
+    <video id="leftVideo" autoplay muted="muted" loop>
+      <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
+    </video>
+    <img src="./ai-vid_GET/logo.png" class="logoImg"/>
+    <div id="questionText" class="questionText">
+      
+    </div>
+  </div>
+  <div id="readyState">
+    <video height="100%" width="100%" id="readyVideo" autoplay loop>
+    </video>
+    <div id="sendMessage">
+      <div>Ready to send?</div>
+      <div id="sendMessageChoice">
+        <div id="choiceYes">Yes</div>
+        <div id="choiceNo">No</div>
+      </div>
+    </div>
+  </div>
+    `;
+      var readyVideo = document.getElementById("readyVideo");
+      readyVideo.src = window.URL.createObjectURL(fd);
+      var yesChoice = document.getElementById("choiceYes");
+      console.log(yesChoice);
+      console.log(fd);
+      var superBuffer = new Blob([fd], { type: fd.type });
+      yesChoice.onclick = () => yesClick(toUpload);
+      // yesChoice.onClick = () => {
+      //   console.log('Hello');
+      //   document.body.appendChild(toUpload);
+      //   toUpload.submit();
+      // };
+      var noChoice = document.getElementById("choiceNo");
+      noChoice.onclick = () => formSubmit("no");
+    } else if (value === "yes123") {
+      download();
+      container.innerHTML = `
+    <div class="adminSide">
+        <video id="leftVideo" autoplay muted="muted" loop>
+          <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
+        </video>
+        <img src="./ai-vid_GET/logo.png" class="logoImg"/>
+        <div id="questionText" class="questionText">
+          
+        </div>
+      </div>
+      <div id="userSide">
+        <div class="startVideo">
+          <div class="recordStart" onclick="startFrame()">
+            <i class="fas fa-video"></i> Record your video
+          </div>
+          <div>
+            You can practice before sending.
+          </div>
+        </div>
+      </div>
+    `;
+      document.getElementById("questionText").innerHTML = QuestionMsg;
+    } else {
+      container.innerHTML = `
+    <div class="adminSide">
+        <video id="leftVideo" autoplay muted="muted" loop>
+          <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
+        </video>
+        <img src="./ai-vid_GET/logo.png" class="logoImg"/>
+        <div id="questionText" class="questionText">
+          
+        </div>
+      </div>
+      <div id="userSide">
+        <div class="startVideo">
+          <div class="recordStart" onclick="startFrame()">
+          <i class="fas fa-video"></i> Record your video
+          </div>
+          <div>
+            You can practice before sending.
+          </div>
+        </div>
+      </div>
+    `;
+      document.getElementById("questionText").innerHTML = QuestionMsg;
+    }
+  }
+}
+
 
 function startFrame() {
   var container = document.getElementById("container");
@@ -372,8 +474,7 @@ enctype="multipart/form-data"
         </div>
       </div>
     `;
-      document.getElementById("questionText").innerHTML =
-        "Your question will appear here.";
+      document.getElementById("questionText").innerHTML = QuestionMsg;
     } else {
       container.innerHTML = `
     <div class="adminSide">
@@ -396,8 +497,7 @@ enctype="multipart/form-data"
         </div>
       </div>
     `;
-      document.getElementById("questionText").innerHTML =
-        "Your question will appear here.";
+      document.getElementById("questionText").innerHTML = QuestionMsg;
     }
   }
 
