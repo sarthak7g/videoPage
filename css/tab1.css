@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'avantgardeitc-demi';
+    src: url('../Fonts/ITCAvantGardeGothicMedium.woff2') format('woff2'), url('../Fonts/ITCAvantGardeGothicMedium.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'AvantageSmall';
+  src: url('../fonts/AvantageSmall.woff2') format('woff2'),
+      url('../fonts/AvantageSmall.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+} */
+
+
+
+@font-face {
+    font-family: 'AvantageSmall';
+    src: url('../Fonts/ITCAvantGardeGothicCEBook.woff2') format('woff2'), url('../Fonts/ITCAvantGardeGothicCEBook.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'avantgardemditc';
+  src: url('../fonts/avantgardemditc-bold.woff2') format('woff2'),
+      url('../fonts/avantgardemditc-bold.woff') format('woff');
+  font-weight: medium;
+  font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'avantgardemditc';
+    src: url('../Fonts/ITCAvantGardeGothicMedium.woff2') format('woff2'), url('../Fonts/ITCAvantGardeGothicMedium.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+}
+
+
+.bgs{background-image:url(../images/g5/bgline.jpg);
+ height: 100%;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.setting_ipt {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f6c116;
+    border-radius: 10px;
+    resize: vertical;
+    /*font-family: 'AvenirNextRoundedPro', sans-serif;*/
+    background: #f6c116;
+    outline: none;
+	color:#4a164b;
+    font-weight: 600;
+	letter-spacing:3px;
+}
+label{ margin-right: 25px;font-family: 'avantgardemditc', sans-serif;padding: 14px 32px;
+  font-size: 18px; }
+
+.tablinks {
+  background-color:#f6c116;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 35px;
+    padding: 2px 32px;
+    font-size: 17px;
+    border: 2px solid #4a164b;
+	
+}
+
+.tablink {
+  background-color: #4a164b;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  float:left;
+  padding: 14px 32px;
+  font-size: 18px;
+  width: 32%;
+  border-bottom: 1px solid #35103b;
+  border-top: 1px solid #35103b;
+  border-radius:15px;
+  font-weight:600; 
+}
+
+#defaultOpen .tablink:a{
+color:#FFFF00;
+
+}
+
+.tablink:hover {
+
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  /*color: white;*/
+  display: none;
+  padding: 95px 15px;
+  height: 100%;
+}
+
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 420px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.searchpt{
+padding-top:1.5rem!important;
+
+}
+@media (max-width: 640px) {
+.searchpt{
+padding-top:0rem;
+
+}
+.tablink {
+  background-color: #f7c212;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  /*padding: 14px 16px;*/
+  font-size: 17px;
+  width: 14.28%;
+  border-bottom: 1px solid #35103b;
+  border-top: 1px solid #35103b;
+  
+}
+.tabcontent {
+  /*color: white;*/
+  display: none;
+  padding: 5px 15px;
+  height: 100%;
+}
+.pt-5{
+padding-top:0rem!important;
+
+}
+.column {
+  float: none;
+  width: 100%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+
+}
