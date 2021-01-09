@@ -626,13 +626,10 @@ $(document).ready(function(){
           <div class="col-sm-9">
             <!-- Tab panes -->
             <div class="tab-content">
-              <div class="tab-pane active tab-video" id="home-v">
-          <video class="video-aiexplore" width="100%" height="auto" controls>
-            <source src="video/video.mp4" type="video/mp4" />
-          </video>
+              <div class="tab-pane tab-video" id="home-v">
         </div>
             
-        <div class="tab-pane tab-video" id="messages-v">
+        <div class="tab-pane active tab-video" id="messages-v">
           <div id="container">
             <div class="adminSide">
               <video id="leftVideo" class="video-aiexplore" autoplay muted="muted" loop>
@@ -645,7 +642,7 @@ $(document).ready(function(){
             </div>
             <div id="userSide">
               <div class="startVideo">
-                <div class="recordStart" onclick="startFrame()">
+                <div id="recordStart" class="recordStart" style="background-color: grey;" onclick="">
                   <i class="fas fa-video"></i> Record your video
                 </div>
                 <div>
