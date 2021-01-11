@@ -21,7 +21,31 @@ function questionTextChange(msg){
   
 
   function formSubmit() {
-      container.innerHTML = `
+      if(QuestionMsg === ''){
+        container.innerHTML = `
+    <div class="adminSide">
+        <video id="leftVideo" autoplay muted="muted" loop>
+          <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
+        </video>
+        <img src="./ai-vid_GET/logo.png" class="logoImg"/>
+        <div id="questionText" class="questionText">
+          
+        </div>
+      </div>
+      <div id="userSide">
+        <div class="startVideo">
+          <div class="recordStart" style="background-color: lightgrey;" onclick="">
+          <i class="fas fa-video"></i> Record your video
+          </div>
+          <div>
+            You can practice before sending.
+          </div>
+        </div>
+      </div>
+    `;
+      document.getElementById("questionText").innerHTML = QuestionMsg;
+      }else{
+        container.innerHTML = `
     <div class="adminSide">
         <video id="leftVideo" autoplay muted="muted" loop>
           <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
@@ -43,9 +67,9 @@ function questionTextChange(msg){
       </div>
     `;
       document.getElementById("questionText").innerHTML = QuestionMsg;
-  }
+      }
 
-
+    }
 
   /////end/////
 }
