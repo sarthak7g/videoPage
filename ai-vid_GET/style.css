@@ -5,6 +5,23 @@
     width: 99px;
   } */
 
+#username, #userEmail {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  margin: 10px 0px;
+}
+
+#detailSubmitButton {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  width: 100%;
+  margin: 10px 0px;
+  background-color: #3f1848;
+}
+
 .adminSide {
   width: 50%;
   height: 100%;
