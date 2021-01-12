@@ -1,0 +1,428 @@
+.Rcontainer {
+    margin-top: 10px;
+}
+.Rtoggle {
+    position: absolute;
+    background-color: #dde0ec;
+    right: 30px;
+    grid-area: toggle;
+    width: 160px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 15px;
+}
+@media only screen and (max-width: 500px) {
+    .Rtoggle {
+        position: inherit;
+    }
+}
+
+.Rtoggle .RtoggleSearch,
+.Rtoggle .RtoggleAddTag {
+    width: 80px;
+    height: 100%;
+    padding: 3px 3px;
+    font-size: 17;
+    -webkit-appearance: none;
+    text-align: center;
+    border: 0px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    background: #d6d6d8;
+    outline: none;
+}
+.RtoggleSearch {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.RtoggleAddTag {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 2px 2px 4px #aab2bd;
+}
+.Rtoggle button:focus {
+    outline: none;
+}
+.Ractive {
+    background: #f6c116 !important;
+    color: #4a164b !important;
+}
+
+.RsearchAddContainer {
+    position: relative;
+    grid-area: searchAddContainer;
+    margin: 0 15px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.RsearchContainer,
+.RaddContainer {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+.Rshow {
+    display: -webkit-box !important;
+    display: flex !important;
+}
+
+.RaddContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+
+    box-shadow: 0px 0px 2px #aab2bd;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 0 10px;
+    display: none;
+}
+.RaddContainer .RbuttonClass {
+    background: none;
+    border: none;
+    margin-top: 7px;
+    padding: 6px 0px 6px 8px;
+    margin-right: 4px;
+    overflow: hidden;
+    background: #7b808c;
+    color: #fff;
+    box-shadow: 0px 0px 2px #aab2bd;
+}
+
+.RaddContainer .RbuttonClass span {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    margin-left: 6px;
+    text-align: center;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #ccc;
+}
+
+.RaddContainer .RbuttonClass span:hover {
+    color: #000;
+}
+.RaddContainer .RbuttonClass span:before {
+    position: absolute;
+    content: ' ';
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.RaddContainer .RbuttonClass span:after {
+    position: absolute;
+    content: '';
+    bottom: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.RaddContainer .RbuttonClass span {
+    cursor: pointer;
+}
+.RbuttonClass {
+    border-radius: 2px;
+    margin-bottom: 3px;
+}
+.Radd_input {
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    height: 50px;
+}
+.Radd_input:focus,
+.Rsearch_input:focus {
+    outline: none;
+}
+.RsearchContainer {
+    box-shadow: 0px 0px 2px #aab2bd;
+}
+.Rsearch_input {
+    border: none;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+.Rul {
+    margin: 25px 15px 25px 15px;
+    grid-area: tags;
+    padding: 0;
+    height: auto;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+.Rul li {
+    position: relative;
+    margin-right: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 7px;
+}
+
+.Rul li a {
+    position: relative;
+    color: #fff;
+    border: 0px solid #fff;
+    height: 100%;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.Rul li a img {
+    position: relative;
+    top: 3px;
+    left: 7px;
+    height: 17px;
+    background-color: #4a164b;
+}
+
+ul .Rul {
+    width: 100% !important;
+    margin-left: 30px !important;
+    margin-top: 10px !important;
+}
+
+.Rcloseicon {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+    .Rcontainer {
+        -webkit-transition: width 0.5s ease-in;
+        transition: width 0.5s ease-in;
+    }
+}
+
+li .Rcustom {
+    color: #fff !important;
+    text-decoration: none;
+    font-family: Arial;
+    transition: 0.3s color linear;
+    border: 3px solid #4a164b !important;
+    padding: 7px !important;
+    position: relative;
+    background: #4a164b;
+}
+li .Rcustom:hover {
+    color: #999 !important;
+}
+li .Rcustom:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 22px;
+    border-style: solid;
+    border-color: transparent transparent transparent #4a164b;
+    top: -3px;
+    right: -46.5px;
+}
+li .Rcustom:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 22px;
+    border-style: solid;
+    border-color: transparent #4a164b transparent transparent;
+    top: -3px;
+    left: -47px;
+}
+
+.pm_icon {
+    display: inline-block;
+    font-size: 1rem;
+}
+.pm_icon + .pm_icon {
+    margin-left: 2.5rem;
+}
+
+.pm_icon {
+    position: relative;
+    cursor: pointer;
+}
+.pm_icon:before,
+.pm_icon:after {
+    content: '';
+}
+.pm_icon span,
+.pm_icon:before,
+.pm_icon:after {
+    position: absolute;
+    display: block;
+    background-color: #f6c116;
+    /* border-radius: 0.125em; */
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.pm_icon--plus {
+    width: 1.5em;
+    height: 1.5em;
+}
+.pm_icon--plus:before {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate3D(0, -50%, 0) rotate(0);
+    transform: translate3D(0, -50%, 0) rotate(0);
+    width: 100%;
+    height: 0.25em;
+}
+.pm_icon--plus:after {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3D(-50%, -50%, 0) rotate(0);
+    transform: translate3D(-50%, -50%, 0) rotate(0);
+    width: 0.25em;
+    height: 100%;
+}
+.pm_icon--plus.is-active:before {
+    -webkit-transform: translate3D(0, -50%, 0) rotate(180deg);
+    transform: translate3D(0, -50%, 0) rotate(180deg);
+}
+.pm_icon--plus.is-active:after {
+    -webkit-transform: translate3D(-50%, -50%, 0) rotate(90deg);
+    transform: translate3D(-50%, -50%, 0) rotate(90deg);
+}
+
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 1px;
+    background: #f6c116;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-range::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 1px;
+    background: #f6c116;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-range::-ms-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 1px;
+    background: #f6c116;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #4a164b;
+    border-radius: 1.3px;
+}
+
+.pieID {
+    display: inline-block;
+    vertical-align: top;
+}
+.pie {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin: 0 30px 30px 0;
+}
+.pie::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+}
+.pie::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    border-radius: 50%;
+    margin: 220px auto;
+}
+.slice {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip: rect(0px, 200px, 200px, 100px);
+    animation: bake-pie 1s;
+}
+.slice span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+}
+.Rlegend {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    padding: 15px;
+    font-size: 13px;
+    box-shadow: 1px 1px 0 #ddd, 2px 2px 0 #bbb;
+}
+.Rlegend li {
+    width: 110px;
+    height: 1.25em;
+    margin-bottom: 0.7em;
+    padding-left: 0.5em;
+    border-left: 1.25em solid black;
+}
+.Rlegend em {
+    font-style: normal;
+}
+.Rlegend span {
+    float: right;
+}
+
+#user-input-a-tag:hover {
+    color: #f6c116 !important;
+}
+
+#save-user-input-btn {
+    background-color: #4a164b;
+    border-color: #4a164b;
+}
+
+.top-check:after {
+    left: 9px !important;
+    top: 5px !important;
+}

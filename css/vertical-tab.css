@@ -1,0 +1,207 @@
+/*** START BS OVERRIDES ***/
+.v-tab-pane .collapse.in {
+    display: block;
+}
+
+.v-tab-pane .fade.in {
+    opacity: 1;
+}
+
+.features {
+    padding: 50px 0;
+}
+
+    .features h2.section-title {
+        color: #333333;
+        font-size: 22px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .features .v-tabs .v-tab-head a,
+    .features .v-tabs a.v-tab-head {
+        color: #4A164B;
+        cursor: pointer;
+        display: block;
+        padding: 15px 30px 15px 15px;
+        border-right: 1px solid #F6C116;
+        margin: 0;
+        text-align: right;
+        font-family: 'avantgardemditc';
+        letter-spacing: 3px;
+        font-size: 16px;
+    }
+
+        .features .v-tabs .v-tab-head a.active,
+        .features .v-tabs .v-tab-head a:hover,
+        .features .v-tabs a.v-tab-head.active,
+        .features .v-tabs a.v-tab-head:hover {
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+    .features .v-tabs .v-tab-head a {
+        position: relative;
+        display: block;
+    }
+
+        .features .v-tabs .v-tab-head a.active::after,
+        .features .v-tabs .v-tab-head a.active::before {
+            content: "";
+            border-style: solid;
+            border-width: 15px;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+        }
+
+        .features .v-tabs .v-tab-head a.active::before {
+            border-color: #F6C116 transparent transparent;
+        }
+
+        .features .v-tabs .v-tab-head a.active::after {
+            margin-right: -1px;
+            border-color: #fff transparent transparent;
+        }
+
+    .features .v-tabs a.v-tab-head {
+        border: none;
+        padding: 15px 0;
+        text-align: left;
+        position: relative;
+        min-height: 60px;
+    }
+
+        .features .v-tabs a.v-tab-head .arrow {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transition: .5s all ease;
+            transform: translateY(-70%);
+            -webkit-transform: translateY(-70%);
+            -moz-transform: translateY(-70%);
+            -o-transform: translateY(-70%);
+        }
+
+        .features .v-tabs a.v-tab-head.active .arrow {
+            transform: rotate(90deg);
+            top: 25%;
+        }
+
+    .features .v-tabs .v-tab-pane {
+        padding: 0 15px;
+    }
+
+        .features .v-tabs .v-tab-pane ul {
+            list-style: outside none none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .features .v-tabs .v-tab-pane ul li {
+                border-bottom: 1px solid #e2dcd6;
+                color: #292929;
+                font-size: 16px;
+                padding: 30px 0;
+            }
+
+                .features .v-tabs .v-tab-pane ul li i {
+                    color: #4A164B;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+
+        .features .v-tabs .v-tab-pane .in {
+            border-top: none;
+            padding-top: 0;
+        }
+
+#features .btn-1 {
+    font-size: 25px;
+}
+
+#parameter-submit-btn {
+    position: relative;
+    max-width: 140px;
+    margin: 0 auto;
+}
+
+.v-tab-pane input[type='radio'] {
+    margin-right: 2%;
+}
+
+    .v-tab-pane input[type='radio']:after,
+    .v-tab-pane input[type='radio']:checked:after {
+        width: 20px;
+        height: 20px;
+        top: -3px;
+        left: -2px;
+    }
+
+
+@media screen and (max-width: 992px) {
+    #parameter .btn-1 {
+        font-size: 20px;
+    }
+
+    #parameter .section-gap {
+        margin-top: 15%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .v-tab-pane input[type='radio'] {
+        margin-right: 5%;
+    }
+
+    .features.light-brown {
+        border-top: 0 none;
+    }
+
+    .features h2.section-title {
+        font-size: 32px;
+    }
+
+    .features .v-tabs .v-tab-pane .in {
+        border-top: 1px solid #DDD;
+        border-bottom: 2px solid #DDD;
+    }
+
+    .features .popover {
+        margin: 10px 5% 0;
+        max-width: none;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #parameter .btn-1 {
+        font-size: 16px;
+    }
+
+    #parameter .section-gap {
+        margin-top: 20%;
+    }
+
+    .features .v-tabs .v-tab-head a,
+    .features .v-tabs a.v-tab-head {
+        font-size: 14px;
+    }
+
+        .features .v-tabs .v-tab-head a.active,
+        .features .v-tabs .v-tab-head a:hover,
+        .features .v-tabs a.v-tab-head.active,
+        .features .v-tabs a.v-tab-head:hover {
+            font-size: 18px;
+        }
+
+
+}

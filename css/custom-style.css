@@ -1,0 +1,566 @@
+/*    Slider CSS    */
+
+.slider_mg_panel_main {
+    background-image: url(../img/slider_bg.png) !important;
+    background-position: 0px 525px;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 10px;
+    min-height: auto;
+    margin-bottom: 0px;
+    float: left;
+    text-align: center;
+}
+
+.landing-heading-1 {
+    font-size: 22px;
+    line-height: 30px;
+    width: auto;
+    display: inline-block;
+    margin: 0px auto;
+    float: none;
+    color: #6d6d6d;
+    position: relative;
+    padding-bottom: 0px;
+    font-weight: 400;
+}
+
+.main_slider_cenr {
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+}
+
+.skills-wrap {
+    text-align: center;
+    margin-bottom: 12px;
+    padding-top: 40px;
+}
+
+.fl-width {
+    width: 100%;
+    float: left;
+}
+
+.btnyellow_creator {
+    padding: 11px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #4a164b;
+    background-color: #f8c212;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px #4a164b !important;
+}
+
+
+
+.img-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+    .img-slider .slider-container {
+        position: relative;
+        width: 300%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        animation: slider 26s infinite;
+    }
+
+        .img-slider .slider-container .slide {
+            position: relative;
+            width: 33.33333333%;
+            height: auto;
+            float: left;
+            overflow: hidden
+        }
+
+            .img-slider .slider-container .slide img {
+                display: block;
+                width: 50%;
+                height: auto;
+                margin: auto;
+            }
+
+@keyframes slider {
+    0%, 25%, 100% {
+        left: 0
+    }
+
+    30%, 55% {
+        left: -100%
+    }
+
+    60%, 85% {
+        left: -200%
+    }
+}
+
+
+
+
+/*    Upper Charted CSS     */
+
+.rounded-contain {
+    color: #fff;
+    text-transform: uppercase;
+    border: 2px dashed #ffa800;
+    border-radius: 50px;
+    padding: 18px;
+    font-weight: 600;
+    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+    letter-spacing: .08em;
+    padding: 5px;
+    text-align: center;
+}
+
+    .rounded-contain .rounded-subcontain {
+        border-radius: 50px;
+        padding: 17px;
+        background-color: #f9c620;
+    }
+
+
+@media screen and (max-width: 906px) {
+    .rounded-contain1 .rounded-subcontain1 {
+        font-size: 10px;
+    }
+}
+
+
+
+/*    G5 Home CSS      */
+
+.g5-banner {
+    width: 100%;
+}
+
+    .g5-banner .banner-text {
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+.g5-head {
+    font-size: 55px;
+    text-align: center;
+    color: #4a164b;
+    top: 2px;
+    line-height: 55px;
+    margin-bottom: 45px;
+}
+
+    .g5-head span {
+        color: #f8c212;
+        font-size: 40px;
+    }
+
+.g5-about .pentagon-icon {
+    top: 25%;
+}
+
+.g5-about-text span {
+    color: #4a164b;
+}
+
+.g5-about-icon {
+    width: 100%;
+    margin-top: 35px;
+}
+
+    .g5-about-icon img {
+        width: 30%;
+        margin: auto;
+        display: flex;
+    }
+
+    .g5-about-icon p {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+.g5-title img {
+    width: 25%;
+    margin: auto;
+    display: flex;
+}
+
+
+.g5-hive img {
+    ​​​​​​​ width: 25%;
+    margin: auto;
+    display: flex;
+}
+
+​​​​​​​
+
+.g5-team p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a164b;
+    text-align: center;
+}
+
+.g5-bene .g5-list span {
+    min-height: 40px;
+}
+
+.g5-bene .g5-list img {
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+
+.g5-bene .g5-list p {
+    text-align: justify;
+    margin: auto;
+}
+
+.g5-bene .pentagon-icon {
+    left: auto;
+    right: 0;
+}
+
+.section-banner p .changing-text, .section-banner p .typed-cursor {
+    color: #dca927;
+}
+
+
+#particles-js {
+    z-index: 1;
+}
+
+    #particles-js, #particles-js:before {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        width: 100%;
+        height: 400px;
+    }
+
+@media only screen and (max-width: 990px) {
+    .g5-head {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+        .g5-head span {
+            font-size: 30px;
+        }
+
+    .g5-banner .banner-text {
+        font-size: 25px;
+    }
+
+    #particles-js, #particles-js:before {
+        top: 7%;
+        height: 300px;
+    }
+
+    .g5-team .team-edu {
+        position: relative;
+        text-align: center;
+    }
+}
+
+
+/*      Hackathon CSS       */
+
+.g5-slot img {
+    width: 40%;
+    margin: auto;
+    display: flex;
+}
+
+
+
+
+/*   Verticle Tab   */
+.video-menu {
+    border-bottom: none;
+    padding-top: 2px;
+    display: block;
+    text-align: left;
+    font-size: 14.5px;
+    margin-top: 10rem;
+
+}
+
+    .video-menu li {
+        margin-bottom: 12px;
+    }
+
+        .video-menu li > a {
+            color: #c5c5c5;
+            display: block;
+            text-align: left;
+        }
+
+            .video-menu li > a > span {
+                border-bottom: 1px solid #c5c5c5;
+            }
+
+    .video-menu a:active span {
+        border: none;
+    }
+
+.tab-video video {
+    border-radius: 10px !important;
+}
+
+.navbar-menu li a:hover, .navbar-menu li:hover {
+    background: none !important;
+}
+
+/*   bottom partner CSS   */
+.partner {
+    max-width: 10%;
+}
+
+#slider-container {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    max-width: 1000px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 15px #888;
+}
+
+#slider-scroller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(260px * 6);
+    transition: all 1s ease;
+}
+
+.slider-item {
+    width: 220px;
+    height: 110px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+    .slider-item img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 150px;
+        max-height: 100px;
+    }
+
+/*     Index Mobile CSS    */
+
+@media only screen and (max-width: 906px) {
+    .video-menu {
+        margin-top: 0;
+    }
+}
+
+
+
+/****  Hackathon CSS      ****/
+
+
+a:hover, a:focus {
+    ​​​​​​​ outline: none;
+    text-decoration: none;
+}
+
+​​​​​​​
+.tab {
+    ​​​​​​​ text-align: center;
+}
+
+    ​​​​​​​
+    .tab .hack-tabs {
+        ​​​​​​​ display: inline-flex;
+        position: relative;
+        border-bottom: none;
+    }
+
+        ​​​​​​​
+        .tab .hack-tabs li {
+            ​​​​​​​ margin: 0;
+        }
+
+            ​​​​​​​
+            .tab .hack-tabs li a {
+                ​​​​​​​ display: flex;
+                padding: 80px 20px 10px;
+                background: #fff;
+                font-size: 17px;
+                font-weight: 700;
+                color: #999;
+                text-transform: uppercase;
+                text-align: center;
+                border-radius: 0;
+                border: none;
+                border-bottom: 2px solid #fff;
+                margin-right: 0;
+                overflow: hidden;
+                z-index: 1;
+                position: relative;
+                transition: all 0.3s ease 0s;
+            }
+
+                ​​​​​​​
+                .tab .hack-tabs li a span {
+                    ​​​​​​​ display: block;
+                    width: 60px;
+                    height: 60px;
+                    line-height: 50px;
+                    background: #f2f2f2;
+                    margin: auto;
+                    color: #999;
+                    border-radius: 5px;
+                    border: 1px solid #ddd;
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    right: 0;
+                    transform: rotate(45deg);
+                }
+
+                ​​​​​​​
+                .tab .hack-tabs li a.active span {
+                    ​​​​​​​ background: #4a164b;
+                    color: #fff;
+                }
+
+​​​​​​​
+.hack-tabs img {
+    ​​​​​​​ transform: rotate(-45deg);
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: block;
+    height: auto;
+    padding: 8px;
+}
+
+​​​​​​​
+.tab .hack-tabs li.active a,
+.tab .hack-tabs li a:hover {
+    ​​​​​​​ color: #999;
+    border: none;
+    border-bottom: 2px solid #fff;
+}
+
+​​​​​​​
+.tab .hack-tabs li.active a {
+    ​​​​​​​ border-bottom: none;
+}
+
+​​​​​​​
+.tab .tab-content {
+    ​​​​​​​ font-size: 15px;
+    color: #757575;
+    line-height: 26px;
+    text-align: left;
+}
+
+    ​​​​​​​
+    .tab .tab-content h4 {
+        ​​​​​​​ font-size: 24px;
+        margin-top: 0;
+        color: #4a164b;
+    }
+
+​​​​​​​
+
+
+.tab .hack-tabs a.active {
+    ​​​​​​​ color: #4A164B !important;
+    border-bottom: none !important;
+}
+
+​​​​​​​
+
+
+.brief-points {
+    ​​​​​​​ font-family: 'avantgardemditc';
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: auto auto 20px;
+}
+
+    ​​​​​​​
+
+
+    .brief-points li:before {
+        ​​​​​​​ content: ' ';
+        color: #f8c212;
+        margin: 0 7px;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-color: #f8c212;
+        border-radius: 50%;
+    }
+
+​​​​​​​
+
+
+.hack-skill-list span {
+    ​​​​​​​ height: 5rem;
+}
+
+​​​​​​​
+
+
+.hack-skill-list .title-text {
+    ​​​​​​​ font-size: 18px;
+    font-weight: 600;
+}
+
+​​​​​​​
+
+
+.hack-skill-list .sub-text {
+    ​​​​​​​ font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    color: #231F20;
+    margin: 0;
+    font-family: 'AvantageSmall';
+}
+
+​​​​​​​
+
+
+.hack-team img {
+    ​​​​​​​ width: 100%;
+}
+
+​​​​​​​
+
+
+@media only screen and (max-width: 479px) {
+    ​​​​​​​ .tab .hack-tabs li
+
+{
+    ​​​​​​​ width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+​​​​​​​
+.tab .hack-tabs li:last-child {
+    ​​​​​​​ margin-bottom: 0;
+}
+
+​​​​​​​
+}
+​​​​​​​

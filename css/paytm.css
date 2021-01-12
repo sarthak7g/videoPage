@@ -1,0 +1,39 @@
+.h1{
+   
+    color: #4a164b !important;
+}
+.h2{
+    color: #4a164b !important;
+    margin-top: 20px;
+}
+.p1{
+    color: #4a164b !important;
+
+}
+.h3{
+    color: #4a164b !important;
+}
+.btn{
+    background: #f6c116;
+    color: #4a164b !important;
+}
+.h4{
+    color: #4a164b !important;
+    margin: 50px;
+}
+.h5{
+    color: #4a164b !important;
+    margin: 50px;
+}
+.h6{
+    color: #4a164b !important;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:wheat;
+    color: black;
+    text-align: center;
+  }

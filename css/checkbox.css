@@ -1,0 +1,181 @@
+.toggle {
+    --uiToggleSize: var(--toggleSize, 1.25rem);
+    --uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+    --uiToggleColor: var(--toggleColor, #222);
+
+    display: var(--toggleDisplay, inline-flex);
+    position: relative;
+}
+
+.toggle__input {
+    width: var(--uiToggleSize);
+    height: var(--uiToggleSize);
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+/*
+   1. Calculation of the gap for the custom checkbox
+  */
+
+.toggle__label {
+    display: inline-flex;
+    min-height: var(--uiToggleSize);
+    padding-left: calc(var(--uiToggleSize) + var(--toggleIndent, 0.5em));
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label {
+    cursor: pointer;
+}
+
+
+.toggle__label::before,
+.toggle__label::after {
+    content: '';
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    font-size: var(--uiToggleSize); 
+
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.toggle__label::before {
+    border: var(--uiToggleBorderWidth) solid var(--uiToggleColor);
+    z-index: 2;
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label::after {
+    background-color: var(--uiToggleColor);
+    opacity: 0;
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label::after {
+    opacity: 1;
+}
+
+.toggle__text {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.toggle__input:not(:disabled) ~ .toggle__label .toggle__text::before {
+    content: '';
+    width: 0;
+    height: 0;
+    font-size: var(--uiToggleSize); 
+
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--toggleArrowColor, #fff);
+
+    position: absolute;
+    top: 0.5428em;
+    left: 0.25em;
+    z-index: 3;
+
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label .toggle__text::before {
+    --uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+
+    width: 0.4em;
+    height: 0.2em;
+    border-left-width: var(--uiToggleArrowWidth);
+    border-bottom-width: var(--uiToggleArrowWidth);
+}
+
+/*
+  States
+  */
+
+/* focus state */
+
+.toggle:focus-within {
+    outline: var(--toggleOutlineWidthFocus, 3px) solid
+        var(--toggleOutlineColorFocus, currentColor);
+    outline-offset: var(--toggleOutlineOffsetFocus, 5px);
+}
+
+/* disabled state */
+
+.toggle__input:disabled ~ .toggle__label {
+    opacity: var(--toggleOpacityDisabled, 0.24);
+    cursor: var(--toggleCursorDisabled, not-allowed);
+}
+
+
+.toggle__label::before,
+.toggle__label::after {
+    border-radius: var(--toggleBorderRadius, 2px);
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label::before,
+.toggle__input:not(:disabled) ~ .toggle__label::after {
+    opacity: 1;
+    transform-origin: center center;
+    will-change: transform;
+    transition: transform 0.2s ease-out;
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label::before {
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+}
+
+.toggle__input:not(:disabled) ~ .toggle__label::after {
+    transform: rotateY(90deg);
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label::before {
+    transform: rotateY(-90deg);
+    transition-delay: 0s;
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label::after {
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+}
+
+.toggle__text::before {
+    opacity: 0;
+}
+
+.toggle__input:not(:disabled):checked ~ .toggle__label .toggle__text::before {
+    opacity: 1;
+    transition: opacity 0.1s ease-out 0.3s, width 0.1s ease-out 0.5s,
+        height 0.2s ease-out 0.3s;
+}
+
+/*
+  =====
+  SETTINGS
+  =====
+  */
+
+.toggle {
+    --toggleColor: #F6C116;
+    --toggleBackgroundColor: #d6b139;
+    --toggleSize: 23px;
+}
+
+.page__toggle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #49164B;
+}
+
+.page__toggle:nth-child(n + 2) {
+    margin-top: 1.5rem;
+}
