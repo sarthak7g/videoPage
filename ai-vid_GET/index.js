@@ -15,8 +15,10 @@ function detailSubmit(e){
 function questionTextChange(msg){
   document.getElementById("questionText").innerHTML = msg;
   QuestionMsg = msg;
-  if(username !== ''){
+  if(username === ''){
     formSubmit();
+  }else{
+    startFrame();
   }
   
 
@@ -37,6 +39,9 @@ function questionTextChange(msg){
           <div class="recordStart" style="background-color: lightgrey;" onclick="">
           <i class="fas fa-video"></i> Record your video
           </div>
+          <div class="recordStart" style="background-color: lightgrey;" onclick="">
+                  <i class="fas fa-upload"></i> Upload your video
+                  </div>
           <div>
             You can practice before sending.
           </div>
@@ -60,6 +65,9 @@ function questionTextChange(msg){
           <div class="recordStart" onclick="startFrame()">
           <i class="fas fa-video"></i> Record your video
           </div>
+          <div class="recordStart" onclick="">
+                  <i class="fas fa-upload"></i> Upload your video
+                  </div>
           <div>
             You can practice before sending.
           </div>
@@ -76,6 +84,16 @@ function questionTextChange(msg){
 
 
 function startFrame() {
+  if(username === '' || userEmail === ''){
+    document.getElementById('userSide').innerHTML = `
+    <div class="startVideo">
+    <div><input id="username" type="text" placeholder="Username" required/></div>
+    <div><input id="userEmail" type="email" placeholder="User Email" required/></div>
+    <div><button id="detailSubmitButton" type="button" onclick="detailSubmit(event)">Submit</button></div>
+  </div>
+    `;
+    return;
+  }
   var container = document.getElementById("container");
   var videoDiv = document.getElementById("userSide");
   videoDiv.innerHTML =
@@ -98,7 +116,7 @@ method="POST"
 enctype="multipart/form-data"
 >
 <input id="video_file" hidden name="filename" type="file" accept="video/*"/>
-<label for="video_file" id="videoLabel" class="button"><i class="fas fa-cloud-upload-alt"></i></label>
+<label for="video_file" style="margin: 0px;" id="videoLabel" class="button"><i class="fas fa-cloud-upload-alt"></i></label>
 <input type="submit" hidden/>
 </form>
 </div>
@@ -440,6 +458,9 @@ enctype="multipart/form-data"
           <div class="recordStart" onclick="startFrame()">
             <i class="fas fa-video"></i> Record your video
           </div>
+          <div class="recordStart" onclick="">
+                  <i class="fas fa-upload"></i> Upload your video
+                  </div>
           <div>
             You can practice before sending.
           </div>
@@ -463,6 +484,9 @@ enctype="multipart/form-data"
           <div class="recordStart" onclick="startFrame()">
           <i class="fas fa-video"></i> Record your video
           </div>
+          <div class="recordStart" onclick="">
+                  <i class="fas fa-upload"></i> Upload your video
+                  </div>
           <div>
             You can practice before sending.
           </div>
