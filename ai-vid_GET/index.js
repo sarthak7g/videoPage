@@ -24,11 +24,7 @@ function detailSubmit(e, form = "no") {
 function questionTextChange(msg) {
   document.getElementById("questionText").innerHTML = msg;
   QuestionMsg = msg;
-  if (username === "") {
     formSubmit();
-  } else {
-    startFrame();
-  }
 
   function formSubmit() {
     if (QuestionMsg === "") {
@@ -426,6 +422,7 @@ function formSubmit(value) {
   `;
     document.getElementById("questionText").innerHTML = QuestionMsg;
     var uploadFile = document.getElementById("video_file");
+    uploadFile.value = null;
     uploadFile.onchange = () => {
       console.log("uploaded");
       formSubmit("yes");
@@ -568,7 +565,7 @@ function otpCheck(data,form='no'){
     </div>
   `;
   if(form === 'yes'){
-    document.getElementById('otpSubmitButton').onclick = () => formSubmit('yes');
+    document.getElementById('otpSubmitButton').onclick = () => yesClick(document.getElementById("upload"));
   }else{
     document.getElementById('otpSubmitButton').onclick = () => afterSelection(data);
   }
