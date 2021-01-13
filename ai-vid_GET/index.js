@@ -46,7 +46,9 @@ function questionTextChange(msg) {
           <label for="" style="margin: 0px;padding: 0px;font-size: 1rem;display:block;"><div class="recordStart" style="background-color: lightgrey;" onclick="">
                   <i class="fas fa-upload"></i> Upload your video
                   </div></label>
-            You can practice before sending.
+                  <div>
+                  <a href="#" onclick="return openVideo()">You can practice before sending.</a>
+              </div>
           </div>
         </div>
       </div>
@@ -71,7 +73,9 @@ function questionTextChange(msg) {
           <label for="video_file" style="margin: 0px;padding: 0px;font-size: 1rem;display:block;"><div class="recordStart">
                   <i class="fas fa-upload"></i> Upload your video
                   </div></label>
-            You can practice before sending.
+                  <div>
+                  <a href="#" onclick="return openVideo()">You can practice before sending.</a>
+              </div>
           </div>
         </div>
       </div>
@@ -390,7 +394,9 @@ function formSubmit(value) {
         <label for="video_file" style="margin: 0px;padding: 0px;font-size: 1rem;display:block;"><div class="recordStart">
                 <i class="fas fa-upload"></i> Upload your video
                 </div></label>
-          You can practice before sending.
+                <div>
+                <a href="#" onclick="return openVideo()">You can practice before sending.</a>
+            </div>
         </div>
       </div>
     </div>
@@ -415,7 +421,9 @@ function formSubmit(value) {
         <label for="video_file" style="margin: 0px;padding: 0px;font-size: 1rem;display:block;"><div class="recordStart">
                 <i class="fas fa-upload"></i> Upload your video
                 </div></label>
-          You can practice before sending.
+                <div>
+                <a href="#" onclick="return openVideo()">You can practice before sending.</a>
+            </div>
         </div>
       </div>
     </div>
