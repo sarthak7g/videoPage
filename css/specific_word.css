@@ -1,0 +1,236 @@
+body {
+    background-color: #f9f9f9;
+}
+.Rcontainer {
+    padding-left: 10%;
+    margin-top: 10px;
+}
+.Rtoggle {
+    position: relative;
+    top: 11px;
+    left: 19%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    grid-area: toggle;
+    width: 160px;
+    height: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px #AAB2BD;
+}
+.Rtoggle .RtoggleSearch,
+.Rtoggle .RtoggleAddTag {
+    width: 80px;
+    height: 100%;
+    padding: 5px 5px;
+    text-align: center;
+    border: 0px solid #fff;
+    cursor: pointer;
+    background: #fff;
+    color: #4a164b;
+}
+.RtoggleSearch {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.RtoggleAddTag {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.Rtoggle button:focus {
+    outline: none;
+}
+.Ractive {
+    background: #4a164b !important;
+    color: #F6C116 !important;
+}
+
+.RsearchAddContainer {
+    position: relative;
+    grid-area: searchAddContainer;
+    margin: 0 15px;
+    height: 100%;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.RsearchContainer,
+.RaddContainer {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+.Rshow {
+    display: -webkit-box !important;
+    display: flex !important;
+}
+
+.RaddContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+
+    box-shadow: 0px 0px 2px #AAB2BD;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 0 10px;
+    display: none;
+}
+.RaddContainer .RbuttonClass {
+    background: none;
+    border: none;
+    margin-top: 7px;
+    padding: 6px 0px 6px 8px;
+    margin-right: 4px;
+    overflow: hidden;
+    background: #7b808c;
+    color: #fff;
+    box-shadow: 0px 0px 2px #AAB2BD;
+}
+
+.RaddContainer .RbuttonClass span {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    margin-left: 6px;
+    text-align: center;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: #ccc;
+}
+
+.RaddContainer .RbuttonClass span:hover {
+    color: #000;
+}
+.RaddContainer .RbuttonClass span:before {
+    position: absolute;
+    content: ' ';
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.RaddContainer .RbuttonClass span:after {
+    position: absolute;
+    content: '';
+    bottom: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+.RaddContainer .RbuttonClass span {
+    cursor: pointer;
+
+}
+.RbuttonClass {
+    border-radius: 2px;
+    margin-bottom: 3px;
+}
+#RaddTag {
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    height: 50px;
+}
+#RaddTag:focus,
+#Rsearch:focus {
+    outline: none;
+}
+.RsearchContainer{
+    box-shadow: 0px 0px 2px #AAB2BD;
+}
+#Rsearch {
+    border: none;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+.Rul {
+    margin: 25px 15px 25px 15px;
+    grid-area: tags;
+    padding: 0;
+    height: auto;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+#Rul li {
+    position: relative;
+    list-style-type: none;
+    align-self: flex-start;
+    padding: 6px 0px 6px 8px;
+    margin-right: 7px;
+    overflow: hidden;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 7px;
+    background: red;
+    border-radius: 2px;
+}
+
+#Rul li button {
+    position: relative;
+    color: #fff;
+    background: #fff;
+    border: 0px solid #fff;
+    height: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-left: 6px;
+    cursor: pointer;
+}
+#Rul li button:after,
+#Rul li button:before {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    background: #fff;
+    left: 0;
+}
+#Rul li button:after {
+    top: -100%;
+}
+#Rul li button:before {
+    bottom: -100%;
+}
+#Rul li button img{
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+}
+
+ul#Rul {
+    margin-left: 22;
+}
+
+.Rcloseicon{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+    .Rcontainer {
+        width: 500px;
+        -webkit-transition: width 0.5s ease-in;
+        transition: width 0.5s ease-in;
+    }
+}
