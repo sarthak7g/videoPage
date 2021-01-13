@@ -13,12 +13,9 @@ uploadFile.onchange = () => {
 
 function detailSubmit(e, form = "no") {
   e.preventDefault();
-  console.log(document.getElementById("username").value);
-  console.log(document.getElementById("userEmail").value);
-  username = document.getElementById("username").value;
-  userEmail = document.getElementById("userEmail").value;
   if (form === "yes") {
-    formSubmit("yes");
+    otpCheck('','yes');
+    // formSubmit("yes");
     return;
   }
   questionTextChange(QuestionMsg);
@@ -91,16 +88,7 @@ function questionTextChange(msg) {
 }
 
 function startFrame() {
-  if (username === "" || userEmail === "") {
-    document.getElementById("userSide").innerHTML = `
-    <div class="startVideo">
-    <div><input id="username" type="text" placeholder="Username" required/></div>
-    <div><input id="userEmail" type="email" placeholder="User Email" required/></div>
-    <div><button id="detailSubmitButton" type="button" onclick="detailSubmit(event)">Submit</button></div>
-  </div>
-    `;
-    return;
-  }
+  
   var container = document.getElementById("container");
   var videoDiv = document.getElementById("userSide");
   videoDiv.innerHTML =
@@ -281,49 +269,6 @@ function startFrame() {
     console.log("MediaRecorder started", mediaRecorder);
   }
 
-  function afterSelection(data) {
-    data.name = "recordedData";
-    console.log(data);
-    // container.innerHTML += '<div class="confirmPage"><div class="confirmText">Thank you for uploading the video</div><div class="confirmChoice"><div id="noBtn" class="confirmBtn">Back</div></div></div>'
-
-    // var noOption = document.getElementById('noBtn');
-
-    // noOption.onclick = () => formSubmit('no');
-
-    container.innerHTML += `<div class="confirmPage"><div class="confirmText">Uploading Data. Please wait ...</div></div>`;
-    var formdata = new FormData();
-    formdata.append("filename", data);
-    // console.log(fd.get('#video_file'));
-    var requestOptions = {
-      method: "POST",
-      body: formdata,
-      redirect: "follow",
-      mode: "no-cors",
-    };
-
-    fetch(
-      "http://103.107.66.31:9006/upload-file?contact_name=" +
-        username +
-        "&contact_email=" +
-        userEmail,
-      requestOptions
-    )
-      .then((response) => response)
-      .then((result) => {
-        container.innerHTML +=
-          '<div class="confirmPage"><div class="confirmText">Thank you for uploading the video</div><div class="confirmChoice"><div id="noBtn" class="confirmBtn">Back</div></div></div>';
-
-        var noOption = document.getElementById("noBtn");
-
-        noOption.onclick = () => {
-          formSubmit("no");
-        };
-        return console.log(result);
-      })
-      .catch((error) => console.log("error", error));
-    // fetch('http://103.107.66.31:9006/upload-file',{method: 'POST',mode: 'no-cors',body: data});
-  }
-
   function stopRecording() {
     mediaRecorder.stop();
     container.innerHTML = `
@@ -354,7 +299,7 @@ function startFrame() {
     var type = (recordedBlobs[0] || {}).type;
     var superBuffer = new Blob(recordedBlobs, { type });
     readyVideo.src = window.URL.createObjectURL(superBuffer);
-    yesChoice.onclick = () => afterSelection(superBuffer);
+    yesChoice.onclick = () => verifyUser(superBuffer);
     videoStream.getTracks().forEach(function (track) {
       track.stop();
     });
@@ -392,27 +337,7 @@ function formSubmit(value) {
     for (var pair of fdata.entries()) {
       fd = pair[1];
     }
-    if (username === "" || userEmail === "") {
-      container.innerHTML = `
-      <div class="adminSide">
-      <video id="leftVideo" class="video-aiexplore" autoplay muted="muted" loop>
-        <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
-      </video>
-      <img src="./ai-vid_GET/logo.png" class="logoImg"/>
-      <div id="questionText" class="questionText">
-        
-      </div>
-    </div>
-    <div id="userSide">
-<div class="startVideo">
-<div><input id="username" type="text" placeholder="Username" required/></div>
-<div><input id="userEmail" type="email" placeholder="User Email" required/></div>
-<div><button id="detailSubmitButton" type="button" onclick="detailSubmit(event,'yes')">Submit</button></div>
-</div>
-</div>
-      `;
-      document.getElementById("questionText").innerHTML = QuestionMsg;
-    } else {
+    
       container.innerHTML = `
   <div class="adminSide">
   <video id="leftVideo" autoplay muted="muted" loop>
@@ -441,13 +366,14 @@ function formSubmit(value) {
       console.log(yesChoice);
       console.log(fd);
       var superBuffer = new Blob([fd], { type: fd.type });
-      videoStream.getTracks().forEach(function (track) {
-        track.stop();
-      });
       yesChoice.onclick = () => yesClick(toUpload);
       var noChoice = document.getElementById("choiceNo");
       noChoice.onclick = () => formSubmit("no");
-    }
+      if(videoStream !== undefined){
+        videoStream.getTracks().forEach(function (track) {
+          track.stop();
+        });
+      }
   } else if (value === "yes123") {
     download();
     container.innerHTML = `
@@ -482,7 +408,7 @@ function formSubmit(value) {
       </video>
       <img src="./ai-vid_GET/logo.png" class="logoImg"/>
       <div id="questionText" class="questionText">
-        
+        ${QuestionMsg}
       </div>
     </div>
     <div id="userSide">
@@ -508,8 +434,11 @@ function formSubmit(value) {
 }
 
 function yesClick(form) {
-  container.innerHTML += `<div class="confirmPage"><div class="confirmText">Uploading Data. Please wait ...</div></div>`;
-  console.log();
+  if(username === '' || userEmail === ''){
+    verifyUser(form,'yes');
+  }else{
+    container.innerHTML += `<div class="confirmPage"><div class="confirmText">Uploading Data. Please wait ...</div></div>`;
+  console.log('hi');
   var fd = form.childNodes[1].value;
 
   var fdata = new FormData(form);
@@ -548,5 +477,99 @@ function yesClick(form) {
       return console.log(result);
     })
     .catch((error) => console.log("error", error));
+  }
+  
 }
 // window.isSecureContext could be used for Chrome
+
+function afterSelection(data) {
+  data.name = "recordedData";
+  console.log(data);
+  // container.innerHTML += '<div class="confirmPage"><div class="confirmText">Thank you for uploading the video</div><div class="confirmChoice"><div id="noBtn" class="confirmBtn">Back</div></div></div>'
+
+  // var noOption = document.getElementById('noBtn');
+
+  // noOption.onclick = () => formSubmit('no');
+
+  container.innerHTML += `<div class="confirmPage"><div class="confirmText">Uploading Data. Please wait ...</div></div>`;
+  var formdata = new FormData();
+  formdata.append("filename", data);
+  // console.log(fd.get('#video_file'));
+  var requestOptions = {
+    method: "POST",
+    body: formdata,
+    redirect: "follow",
+    mode: "no-cors",
+  };
+
+  fetch(
+    "http://103.107.66.31:9006/upload-file?contact_name=" +
+      username +
+      "&contact_email=" +
+      userEmail,
+    requestOptions
+  )
+    .then((response) => response)
+    .then((result) => {
+      container.innerHTML +=
+        '<div class="confirmPage"><div class="confirmText">Thank you for uploading the video</div><div class="confirmChoice"><div id="noBtn" class="confirmBtn">Back</div></div></div>';
+
+      var noOption = document.getElementById("noBtn");
+
+      noOption.onclick = () => {
+        formSubmit("no");
+      };
+      return console.log(result);
+    })
+    .catch((error) => console.log("error", error));
+  // fetch('http://103.107.66.31:9006/upload-file',{method: 'POST',mode: 'no-cors',body: data});
+}
+
+
+function verifyUser(data,form='no'){
+  if (username === "" || userEmail === "") {
+    document.getElementById('container').innerHTML = `
+    <div class="adminSide">
+    <video id="leftVideo" autoplay muted="muted" loop>
+      <source src="./ai-vid_GET/matt_1_muted.mp4" type="video/mp4">
+    </video>
+    <img src="./ai-vid_GET/logo.png" class="logoImg"/>
+    <div id="questionText" class="questionText">
+      ${QuestionMsg}
+    </div>
+  </div>
+  <div id="userSide">
+  <div class="startVideo">
+  <div><input id="username" type="text" placeholder="Username" required/></div>
+  <div><input id="userEmail" type="email" placeholder="User Email" required/></div>
+  <div><button id="detailSubmitButton" type="button">Submit</button></div>
+  </div>
+  </div>
+    `
+    if(form === 'yes'){
+      document.getElementById('detailSubmitButton').onclick = () => otpCheck('','yes');
+    }else{
+      document.getElementById('detailSubmitButton').onclick = () => otpCheck(data);
+    }
+    return;
+  }
+}
+
+function otpCheck(data,form='no'){
+  console.log(document.getElementById("username").value);
+  console.log(document.getElementById("userEmail").value);
+  username = document.getElementById("username").value;
+  userEmail = document.getElementById("userEmail").value;
+  document.getElementById("userSide").innerHTML = `
+    <div class="startVideo">
+    <div><input id="otp" type="text" placeholder="Enter the code" required/></div>
+    <div style="color:red; text-align: right;">Wrong OTP !</div>
+    <div><button id="otpSubmitButton" type="button">Submit</button></div>
+    </div>
+  `;
+  if(form === 'yes'){
+    document.getElementById('otpSubmitButton').onclick = () => formSubmit('yes');
+  }else{
+    document.getElementById('otpSubmitButton').onclick = () => afterSelection(data);
+  }
+}

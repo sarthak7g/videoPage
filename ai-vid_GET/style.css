@@ -6,14 +6,14 @@
   } */
 
   #username,
-  #userEmail {
+  #userEmail,#otp {
     padding: 10px 20px;
     border-radius: 20px;
     border: 1px solid lightgrey;
     margin: 10px 0px;
   }
   
-  #detailSubmitButton {
+  #detailSubmitButton,#otpSubmitButton {
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
