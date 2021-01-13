@@ -1,4 +1,4 @@
-var QuestionMsg = "";
+var QuestionMsg = "Check your communication skills";
 var username = "";
 var userEmail = "";
 var videoStream;

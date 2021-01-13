@@ -807,7 +807,7 @@
                     <div class="recordStart" onclick="questionTextChange('Check Your Communication skills')">
                     <i class="fas fa-video"></i> Record your video
                     </div>
-                    <label for="" style="margin: 0px;padding: 0px;font-size: 1rem;width: 100%;"><div class="recordStart" onclick="questionTextChange('How far to crack interview')">
+                    <label for="video_file" style="margin: 0px;padding: 0px;font-size: 1rem;width: 100%;"><div class="recordStart">
                       <i class="fas fa-upload"></i> Upload your video
                       </div></label>
                     <div>
@@ -819,6 +819,15 @@
                 
                 
               </div>
+              <form
+                id="upload"
+                action="http://103.107.66.31:9006/upload-file"
+                method="POST"
+                enctype="multipart/form-data"
+                >
+                <input id="video_file" hidden name="filename" type="file" accept="video/*"/>
+                <input type="submit" hidden/>
+                </form>
     <!-- <button onclick="window.location.href='ai-vid GET/index.html'"></button> -->
   </div>
               
